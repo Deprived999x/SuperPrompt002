@@ -1,0 +1,89 @@
+/* Styles for inline feature descriptions */
+
+/* Description container */
+.description-container {
+    margin: 10px 0 20px 0;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+}
+
+/* Since :has() selector has limited browser support, we'll use a class-based approach */
+.description-container.has-content {
+    max-height: 500px;
+    margin-top: 10px;
+}
+
+/* JavaScript will add this class when content is added */
+.description-content {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 12px 15px;
+}
+
+/* Description title */
+.description-title {
+    margin: 0 0 8px 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Primary description */
+.primary-description {
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Characteristics section */
+.characteristics-section h5 {
+    margin: 0 0 8px 0;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.characteristics-section ul {
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.characteristics-section li {
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+/* Ethnic note */
+.ethnic-note {
+    margin: 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .description-content {
+        padding: 10px;
+    }
+    
+    .primary-description {
+        font-size: 0.85rem;
+    }
+    
+    .characteristics-section li {
+        font-size: 0.8rem;
+    }
+}
+
+/* Adjust form element spacing */
+.form-group {
+    margin-bottom: 5px;
+}

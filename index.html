@@ -1,257 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Description System</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="inline-styles.css">
-    <style>
-        /* Intensity selector styling */
-        .intensity-selector {
-            margin-top: 20px;
-            border-top: 1px dotted #dee2e6;
-            padding-top: 15px;
-        }
-
-        .intensity-selector label {
-            display: flex;
-            align-items: center;
-        }
-
-        .intensity-selector select {
-            border-color: #3a6ea5;
-        }
-
-        .intensity-selector .tooltip {
-            display: block;
-            font-size: 0.8rem;
-            color: #6c757d;
-            margin-top: 5px;
-            font-style: italic;
-        }
-    </style>
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>Character Description System</h1>
-            <p>Create detailed character descriptions for text-to-image generation</p>
-        </header>
+    <h1>Character Description System</h1>
 
-        <div class="main-content">
-            <div class="sidebar">
-                <div class="feature-navigation">
-                    <h2>Features</h2>
-                    <ul id="feature-nav">
-                        <li class="active" data-section="global-params">Global Parameters</li>
-                        <li data-section="face-shape">Face Shape</li>
-                        <li data-section="eyes">Eyes</li>
-                        <li data-section="nose">Nose</li>
-                        <li data-section="lips">Lips</li>
-                        <li data-section="eyebrows">Eyebrows</li>
-                        <li data-section="cheekbones">Cheekbones</li>
-                        <li data-section="jaw-line">Jaw Line</li>
-                        <li data-section="ears">Ears</li>
-                        <li data-section="head-shape">Head Shape</li>
-                        <li data-section="hair">Hair</li>
-                        <li data-section="wardrobe">Wardrobe</li>
-                    </ul>
-                </div>
+    <h2>Global Parameters</h2>
+    <label for="gender">Gender:</label>
+    <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="androgynous">Androgynous</option>
+    </select><br><br>
 
-                <div class="feature-summary">
-                    <h2>Character Summary</h2>
-                    <div id="character-summary">
-                        <p>No features selected yet.</p>
-                    </div>
-                </div>
-            </div>
+    <label for="age">Age:</label>
+    <select id="age">
+        <option value="child">Child</option>
+        <option value="teen">Teen</option>
+        <option value="young adult">Young Adult</option>
+        <option value="adult">Adult</option>
+        <option value="senior">Senior</option>
+    </select><br><br>
 
-            <div class="feature-panels">
-                <!-- Global Parameters -->
-                <div class="feature-panel active" id="global-params">
-                    <h2>Global Parameters</h2>
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <select id="gender" name="gender">
-                            <option value="">Please select...</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="androgynous">Androgynous</option>
-                        </select>
-                    </div>
+    <label for="build">Build:</label>
+    <select id="build">
+        <option value="athletic">Athletic</option>
+        <option value="lean">Lean</option>
+        <option value="muscular">Muscular</option>
+        <option value="stocky">Stocky</option>
+        <option value="tall_and_slim">Tall and Slim</option>
+        <option value="v-shaped">V-shaped</option>
+        <option value="rectangle">Rectangle</option>
+        <option value="hourglass">Hourglass</option>
+        <option value="heavyset">Heavyset</option>
+        <option value="endomorph">Endomorph</option>
+        <option value="pear">Pear</option>
+        <option value="apple">Apple</option>
+        <option value="inverted_triangle">Inverted Triangle</option>
+        <option value="curvy">Curvy</option>
+        <option value="slender">Slender</option>
+        <option value="plus_size">Plus Size</option>
+    </select><br><br>
 
-                    <div class="form-group">
-                        <label for="age">Age</label>
-                        <select id="age" name="age">
-                            <option value="">Please select...</option>
-                            <option value="child">Child (up to 12)</option>
-                            <option value="teen">Teen (13-19)</option>
-                            <option value="young adult">Young Adult (20-35)</option>
-                            <option value="adult">Adult (36-50)</option>
-                            <option value="senior">Senior (51+)</option>
-                        </select>
-                    </div>
+    <h2>Eyes</h2>
+    <label for="eyeShape">Shape:</label>
+    <select id="eyeShape">
+        <option value="">-- Select Shape --</option>
+        <option value="almond">Almond</option>
+        <option value="round">Round</option>
+        <option value="hooded">Hooded</option>
+        <option value="monolid">Monolid</option>
+        <option value="cat_eyes">Cat Eyes</option>
+        <option value="slanted">Slanted</option>
+        <option value="wide-set">Wide-set</option>
+        <option value="close-set">Close-set</option>
+    </select><br><br>
 
-                    <div class="form-group">
-                        <label for="build">Build</label>
-                        <!-- Male Build Options -->
-                        <select id="build-male" name="build-male" class="build-select" style="display: none;">
-                            <option value="">Please select...</option>
-                            <option value="athletic">Athletic</option>
-                            <option value="lean">Lean</option>
-                            <option value="muscular">Muscular</option>
-                            <option value="stocky">Stocky</option>
-                            <option value="tall_and_slim">Tall and Slim</option>
-                            <option value="v-shaped">V-Shaped</option>
-                            <option value="rectangle">Rectangle</option>
-                            <option value="hourglass">Hourglass</option>
-                            <option value="heavyset">Heavyset</option>
-                            <option value="endomorph">Endomorph</option>
-                        </select>
-                        
-                        <!-- Female Build Options -->
-                        <select id="build-female" name="build-female" class="build-select" style="display: none;">
-                            <option value="">Please select...</option>
-                            <option value="hourglass">Hourglass</option>
-                            <option value="pear">Pear</option>
-                            <option value="apple">Apple</option>
-                            <option value="rectangle">Rectangle</option>
-                            <option value="inverted_triangle">Inverted Triangle</option>
-                            <option value="athletic">Athletic</option>
-                            <option value="curvy">Curvy</option>
-                            <option value="slender">Slender</option>
-                            <option value="plus_size">Plus Size</option>
-                            <option value="stocky">Stocky</option>
-                        </select>
-                    </div>
+    <label for="eyeColor">Color:</label>
+    <select id="eyeColor">
+        <option value="">-- Select Color --</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="brown">Brown</option>
+        <option value="hazel">Hazel</option>
+        <option value="gray">Gray</option>
+        <option value="amber">Amber</option>
+    </select><br><br>
 
-                    <button id="save-globals" class="btn">Save & Continue</button>
-                </div>
+    <label for="eyeModifier">Modifier:</label>
+    <select id="eyeModifier">
+        <option value="">-- Select Modifier --</option>
+        <option value="upturned">Upturned</option>
+        <option value="downturned">Downturned</option>
+    </select><br><br>
 
-                <!-- Face Shape -->
-                <div class="feature-panel" id="face-shape">
-                    <h2>Face Shape</h2>
-                    <div class="shape-options">
-                        <div class="shape-option" data-shape="oval">
-                            <div class="shape-preview oval"></div>
-                            <span>Oval</span>
-                        </div>
-                        <div class="shape-option" data-shape="round">
-                            <div class="shape-preview round"></div>
-                            <span>Round</span>
-                        </div>
-                        <div class="shape-option" data-shape="square">
-                            <div class="shape-preview square"></div>
-                            <span>Square</span>
-                        </div>
-                        <div class="shape-option" data-shape="heart">
-                            <div class="shape-preview heart"></div>
-                            <span>Heart</span>
-                        </div>
-                        <div class="shape-option" data-shape="diamond">
-                            <div class="shape-preview diamond"></div>
-                            <span>Diamond</span>
-                        </div>
-                        <div class="shape-option" data-shape="rectangular">
-                            <div class="shape-preview rectangle"></div>
-                            <span>Rectangular</span>
-                        </div>
-                        <div class="shape-option" data-shape="triangle">
-                            <div class="shape-preview triangle-down"></div>
-                            <span>Triangle</span>
-                        </div>
-                        <div class="shape-option" data-shape="inverted_triangle">
-                            <div class="shape-preview triangle-up"></div>
-                            <span>Inverted Triangle</span>
-                        </div>
-                        <div class="shape-option" data-shape="long">
-                            <div class="shape-preview oblong"></div>
-                            <span>Long</span>
-                        </div>
-                        <div class="shape-option" data-shape="baseball">
-                            <div class="shape-preview round"></div>
-                            <span>Baseball</span>
-                        </div>
-                    </div>
-                    <!-- Description container will be inserted here by JavaScript -->
+    <button onclick="generatePrompt()">Generate Prompt</button><br><br>
 
-                    <!-- Face Shape Intensity Selector -->
-                    <div class="form-group intensity-selector">
-                        <label for="face-shape-intensity">Intensity</label>
-                        <select id="face-shape-intensity" name="face-shape-intensity">
-                            <option value="moderate" selected>Moderate (Default)</option>
-                            <option value="subtle">Subtle</option>
-                            <option value="pronounced">Pronounced</option>
-                            <option value="extreme">Extreme</option>
-                        </select>
-                        <span class="tooltip">Controls how emphatically this feature appears in the generated image</span>
-                    </div>
-                </div>
+    <label for="prompt">Generated Prompt:</label><br>
+    <textarea id="prompt" rows="4" cols="50"></textarea>
 
-                <!-- Eyes -->
-                <div class="feature-panel" id="eyes">
-                    <h2>Eyes</h2>
-                    <div class="form-group">
-                        <label for="eye-shape">Shape</label>
-                        <select id="eye-shape" name="eye-shape">
-                            <option value="">Please select...</option>
-                            <option value="almond">Almond</option>
-                            <option value="round">Round</option>
-                            <option value="hooded">Hooded</option>
-                            <option value="monolid">Monolid</option>
-                            <option value="cat_eyes">Cat Eyes</option>
-                            <option value="slanted">Slanted</option>
-                            <option value="wide-set">Wide-set</option>
-                            <option value="close-set">Close-set</option>
-                        </select>
-                        <!-- Description container will be inserted here by JavaScript -->
-                    </div>
+    <script src="character-system.js"></script>
+    <script>
+        const characterSystem = new CharacterDescriptionSystem();
 
-                    <div class="form-group">
-                        <label for="eye-color">Color</label>
-                        <select id="eye-color" name="eye-color">
-                            <option value="">Please select...</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                            <option value="brown">Brown</option>
-                            <option value="hazel">Hazel</option>
-                            <option value="gray">Gray</option>
-                            <option value="amber">Amber</option>
-                        </select>
-                    </div>
+        function generatePrompt() {
+            const gender = document.getElementById("gender").value;
+            const age = document.getElementById("age").value;
+            const build = document.getElementById("build").value;
 
-                    <div class="form-group">
-                        <label for="eye-modifier">Modifier</label>
-                        <select id="eye-modifier" name="eye-modifier">
-                            <option value="">None</option>
-                            <option value="upturned">Upturned</option>
-                            <option value="downturned">Downturned</option>
-                        </select>
-                        <!-- Description container will be inserted here by JavaScript -->
-                    </div>
+            const globalParams = {
+                gender: gender,
+                age: age,
+                build: build
+            };
 
-                    <!-- Eyes Intensity Selector -->
-                    <div class="form-group intensity-selector">
-                        <label for="eyes-intensity">Intensity</label>
-                        <select id="eyes-intensity" name="eyes-intensity">
-                            <option value="moderate" selected>Moderate (Default)</option>
-                            <option value="subtle">Subtle</option>
-                            <option value="pronounced">Pronounced</option>
-                            <option value="extreme">Extreme</option>
-                        </select>
-                        <span class="tooltip">Controls how emphatically this feature appears in the generated image</span>
-                    </div>
-                </div>
+            const validationResult = characterSystem.setGlobalParams(globalParams);
 
-                <!-- Nose -->
-                <div class="feature-panel" id="nose">
-                    <h2>Nose</h2>
-                    <div class="form-group">
-                        <label for="nose-shape">Shape</label>
-                        <select id="nose-shape" name="nose-shape">
-                            <option value="">Please select...</option>
-                            <option value="straight">Straight</option>
-                            <option value="curved">Curved</option>
-                            <option value="aquiline">Aquiline</option>
-                            <option value="flat">Flat
+            if (validationResult.valid) {
+                // Clear existing eye feature
+                characterSystem.clearFeature("Eyes");
+
+                // Get eye selections
+                const eyeShape = document.getElementById("eyeShape").value;
+                const eyeColor = document.getElementById("eyeColor").value;
+                const eyeModifier = document.getElementById("eyeModifier").value;
+
+                const eyeSelection = {};
+                if (eyeShape) eyeSelection.shape = eyeShape;
+                if (eyeColor) eyeSelection.color = eyeColor;
+                if (eyeModifier) eyeSelection.modifier = eyeModifier;
+
+                if (Object.keys(eyeSelection).length > 0) {
+                    characterSystem.setFeature("Eyes", eyeSelection);
+                }
+
+                const promptResult = characterSystem.generatePrompt(characterSystem.featureSelections);
+
+                if (promptResult.success) {
+                    document.getElementById("prompt").value = promptResult.prompt;
+                } else {
+                    document.getElementById("prompt").value = "Error: " + promptResult.error;
+                }
+            } else {
+                document.getElementById("prompt").value = "Validation Error: " + validationResult.errors.join(", ");
+            }
+        }
+    </script>
+    <script src="feature-descriptions.js"></script>
+    <script src="inline-description.js"></script>
+</body>
+</html>

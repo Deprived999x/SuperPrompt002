@@ -156,7 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Eyes intensity handling
     eyesIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Eyes) {
-            characterSystem.setIntensity('Eyes', this.value);
+            const eyesFeature = characterSystem.featureSelections.Eyes;
+            const intensity = eyesIntensity ? eyesIntensity.value : "moderate";
+            characterSystem.setFeature('Eyes', eyesFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -188,7 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Nose intensity handling
     noseIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Nose) {
-            characterSystem.setIntensity('Nose', this.value);
+            const noseFeature = characterSystem.featureSelections.Nose;
+            const intensity = noseIntensity ? noseIntensity.value : "moderate";
+            characterSystem.setFeature('Nose', noseFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -218,7 +222,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lips intensity handling
     lipsIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Lips) {
-            characterSystem.setIntensity('Lips', this.value);
+            const lipsFeature = characterSystem.featureSelections.Lips;
+            const intensity = lipsIntensity ? lipsIntensity.value : "moderate";
+            characterSystem.setFeature('Lips', lipsFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -250,7 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Eyebrows intensity handling
     eyebrowsIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Eyebrows) {
-            characterSystem.setIntensity('Eyebrows', this.value);
+            const eyebrowsFeature = characterSystem.featureSelections.Eyebrows;
+            const intensity = eyebrowsIntensity ? eyebrowsIntensity.value : "moderate";
+            characterSystem.setFeature('Eyebrows', eyebrowsFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -280,7 +288,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cheekbones intensity handling
     cheekbonesIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Cheekbones) {
-            characterSystem.setIntensity('Cheekbones', this.value);
+            const cheekbonesFeature = characterSystem.featureSelections.Cheekbones;
+            const intensity = cheekbonesIntensity ? cheekbonesIntensity.value : "moderate";
+            characterSystem.setFeature('Cheekbones', cheekbonesFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -301,7 +311,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Jaw Line intensity handling
     jawLineIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Jaw_Line) {
-            characterSystem.setIntensity('Jaw_Line', this.value);
+            const jawLineFeature = characterSystem.featureSelections.Jaw_Line;
+            const intensity = jawLineIntensity ? jawLineIntensity.value : "moderate";
+            characterSystem.setFeature('Jaw_Line', jawLineFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -322,7 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ears intensity handling
     earsIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Ears) {
-            characterSystem.setIntensity('Ears', this.value);
+            const earsFeature = characterSystem.featureSelections.Ears;
+            const intensity = earsIntensity ? earsIntensity.value : "moderate";
+            characterSystem.setFeature('Ears', earsFeature, intensity);
             updateSummary();
             updatePrompt();
         }
@@ -343,7 +357,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Head Shape intensity handling
     headShapeIntensity.addEventListener('change', function() {
         if (characterSystem.featureSelections.Head_Shape) {
-            characterSystem.setIntensity('Head_Shape', this.value);
+            const headShapeFeature = characterSystem.featureSelections.Head_Shape;
+            const intensity = headShapeIntensity ? headShapeIntensity.value : "moderate";
+            characterSystem.setFeature('Head_Shape', headShapeFeature, intensity);
             updateSummary();
             updatePrompt();
         }

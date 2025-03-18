@@ -22,6 +22,11 @@ try {
     featureDescriptions.Head_Shape = require('./head-shape-descriptions.js');
 } catch (e) {
     console.error('Error loading feature descriptions:', e);
+    // Display an error message in the UI
+    const errorContainer = document.createElement('div');
+    errorContainer.style.color = 'red';
+    errorContainer.textContent = 'Failed to load feature descriptions. Please check the console for details.';
+    document.body.insertBefore(errorContainer, document.body.firstChild);
 }
 
 // Export for use in other modules

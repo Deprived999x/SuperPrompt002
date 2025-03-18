@@ -1,4 +1,3 @@
-
 const lipsDescriptions = {
     full: {
         primaryDescription: "Naturally plump and well-defined lips with substantial volume.",
@@ -142,3 +141,4 @@ const lipsDescriptions = {
     }
 };
 module.exports = lipsDescriptions;
+window.lipsDescriptions = lipsDescriptions;

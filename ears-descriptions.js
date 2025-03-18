@@ -202,3 +202,4 @@ const earsDescriptions = {
 };
 
 module.exports = earsDescriptions;
+window.earsDescriptions = earsDescriptions;

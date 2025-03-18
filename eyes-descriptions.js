@@ -161,4 +161,5 @@ const eyesDescriptions = {
     }
 };
 
+window.eyesDescriptions = eyesDescriptions;
 module.exports = eyesDescriptions;

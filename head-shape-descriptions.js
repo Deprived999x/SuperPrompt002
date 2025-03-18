@@ -202,3 +202,4 @@ const headShapeDescriptions = {
 };
 
 module.exports = headShapeDescriptions;
+window.headShapeDescriptions = headShapeDescriptions;

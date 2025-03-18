@@ -1,25 +1,19 @@
-// Modified to use CommonJS require syntax for better browser compatibility
-// This is a browser-compatible version that doesn't use ES6 imports
+// Modified to use global variables instead of require
 
 // First define an empty object to hold all descriptions
 const featureDescriptions = {};
 
-// Set each feature's descriptions manually
-// You can either use direct assignment or a function to load these
-
-// Load descriptions from module files
-// In a real implementation, you would need to ensure these are loaded properly
-// or bundle them with a tool like Webpack
+// Set each feature's descriptions manually, reading from global variables
 try {
-    featureDescriptions.Face_Shape = require('./face-shape-descriptions.js');
-    featureDescriptions.Eyes = require('./eyes-descriptions.js');
-    featureDescriptions.Nose = require('./nose-descriptions.js');
-    featureDescriptions.Lips = require('./lips-descriptions.js');
-    featureDescriptions.Eyebrows = require('./eyebrows-descriptions.js');
-    featureDescriptions.Cheekbones = require('./cheekbones-descriptions.js');
-    featureDescriptions.Jaw_Line = require('./jaw-line-descriptions.js');
-    featureDescriptions.Ears = require('./ears-descriptions.js');
-    featureDescriptions.Head_Shape = require('./head-shape-descriptions.js');
+    featureDescriptions.Face_Shape = window.faceShapeDescriptions;
+    featureDescriptions.Eyes = window.eyesDescriptions;
+    featureDescriptions.Nose = window.noseDescriptions;
+    featureDescriptions.Lips = window.lipsDescriptions;
+    featureDescriptions.Eyebrows = window.eyebrowsDescriptions;
+    featureDescriptions.Cheekbones = window.cheekbonesDescriptions;
+    featureDescriptions.Jaw_Line = window.jawLineDescriptions;
+    featureDescriptions.Ears = window.earsDescriptions;
+    featureDescriptions.Head_Shape = window.headShapeDescriptions;
 } catch (e) {
     console.error('Error loading feature descriptions:', e);
     // Display an error message in the UI

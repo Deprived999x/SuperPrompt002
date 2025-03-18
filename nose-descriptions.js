@@ -1,4 +1,3 @@
-
 // Removed duplicate declaration
 const noseDescriptions = {
     straight: {
@@ -203,3 +202,4 @@ const noseDescriptions = {
     }
 };
 module.exports = noseDescriptions;
+window.noseDescriptions = noseDescriptions;

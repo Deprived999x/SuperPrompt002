@@ -1,4 +1,4 @@
-module.exports = {
+const jawLineDescriptions = {
     square: {
         primaryDescription: "Strong, angular corners with defined edges.",
         visualCharacteristics: [
@@ -200,3 +200,6 @@ module.exports = {
         ethnicExample: "Common across multiple ethnic backgrounds"
     }
 };
+
+module.exports = jawLineDescriptions;
+window.jawLineDescriptions = jawLineDescriptions;

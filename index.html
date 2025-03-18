@@ -14,65 +14,12 @@
         <option value="androgynous">Androgynous</option>
     </select><br><br>
 
-    <label for="age">Age:</label>
-    <select id="age">
-        <option value="child">Child</option>
-        <option value="teen">Teen</option>
-        <option value="young adult">Young Adult</option>
-        <option value="adult">Adult</option>
-        <option value="senior">Senior</option>
-    </select><br><br>
-
-    <label for="build">Build:</label>
-    <select id="build">
-        <option value="athletic">Athletic</option>
-        <option value="lean">Lean</option>
-        <option value="muscular">Muscular</option>
-        <option value="stocky">Stocky</option>
-        <option value="tall_and_slim">Tall and Slim</option>
-        <option value="v-shaped">V-shaped</option>
-        <option value="rectangle">Rectangle</option>
-        <option value="hourglass">Hourglass</option>
-        <option value="heavyset">Heavyset</option>
-        <option value="endomorph">Endomorph</option>
-        <option value="pear">Pear</option>
-        <option value="apple">Apple</option>
-        <option value="inverted_triangle">Inverted Triangle</option>
-        <option value="curvy">Curvy</option>
-        <option value="slender">Slender</option>
-        <option value="plus_size">Plus Size</option>
-    </select><br><br>
-
     <h2>Eyes</h2>
     <label for="eyeShape">Shape:</label>
     <select id="eyeShape">
         <option value="">-- Select Shape --</option>
         <option value="almond">Almond</option>
         <option value="round">Round</option>
-        <option value="hooded">Hooded</option>
-        <option value="monolid">Monolid</option>
-        <option value="cat_eyes">Cat Eyes</option>
-        <option value="slanted">Slanted</option>
-        <option value="wide-set">Wide-set</option>
-        <option value="close-set">Close-set</option>
-    </select><br><br>
-
-    <label for="eyeColor">Color:</label>
-    <select id="eyeColor">
-        <option value="">-- Select Color --</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="brown">Brown</option>
-        <option value="hazel">Hazel</option>
-        <option value="gray">Gray</option>
-        <option value="amber">Amber</option>
-    </select><br><br>
-
-    <label for="eyeModifier">Modifier:</label>
-    <select id="eyeModifier">
-        <option value="">-- Select Modifier --</option>
-        <option value="upturned">Upturned</option>
-        <option value="downturned">Downturned</option>
     </select><br><br>
 
     <button onclick="generatePrompt()">Generate Prompt</button><br><br>
@@ -86,13 +33,9 @@
 
         function generatePrompt() {
             const gender = document.getElementById("gender").value;
-            const age = document.getElementById("age").value;
-            const build = document.getElementById("build").value;
 
             const globalParams = {
                 gender: gender,
-                age: age,
-                build: build
             };
 
             const validationResult = characterSystem.setGlobalParams(globalParams);
@@ -103,13 +46,9 @@
 
                 // Get eye selections
                 const eyeShape = document.getElementById("eyeShape").value;
-                const eyeColor = document.getElementById("eyeColor").value;
-                const eyeModifier = document.getElementById("eyeModifier").value;
 
                 const eyeSelection = {};
                 if (eyeShape) eyeSelection.shape = eyeShape;
-                if (eyeColor) eyeSelection.color = eyeColor;
-                if (eyeModifier) eyeSelection.modifier = eyeModifier;
 
                 if (Object.keys(eyeSelection).length > 0) {
                     characterSystem.setFeature("Eyes", eyeSelection);

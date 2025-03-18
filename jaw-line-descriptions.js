@@ -200,5 +200,3 @@ module.exports = {
         ethnicExample: "Common across multiple ethnic backgrounds"
     }
 };
-
-module.exports = jawLineDescriptions;

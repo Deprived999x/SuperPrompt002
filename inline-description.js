@@ -75,7 +75,9 @@ function setupFaceShapeDescriptions() {
     
     // Insert after the shape options container
     const shapeOptionsContainer = document.querySelector('.shape-options');
-    shapeOptionsContainer.parentNode.insertBefore(descContainer, shapeOptionsContainer.nextSibling);
+    if (shapeOptionsContainer) {
+        shapeOptionsContainer.parentNode.insertBefore(descContainer, shapeOptionsContainer.nextSibling);
+    }
     
     // Add click listeners to shape options
     shapeOptions.forEach(option => {
